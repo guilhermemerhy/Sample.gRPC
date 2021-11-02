@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPC.Client";
+
+package counter;
+
+// The greeting service definition.
+service Counter {
+  // Sends a greeting
+  rpc Count (CountRequest) returns (CountReply);  
+}
+
+// The request message containing the user's name.
+
+
+message CountRequest {
+  string Name = 1;
+}
+
+message CountReply {
+  string message = 1;
+  int32 currentValue = 2;
+  string localSvc = 3;
+  string targetFramework = 4;
+}
